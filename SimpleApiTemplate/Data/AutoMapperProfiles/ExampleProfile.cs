@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SimpleApiTemplate.Data.Dtos;
+using SimpleApiTemplate.Data.Dtos.ExampleDtos;
 using SimpleApiTemplate.Models;
 
 namespace SimpleApiTemplate.Data.AutoMapperProfiles;
@@ -8,9 +8,9 @@ public class ExampleProfile : Profile
 {
     public ExampleProfile()
     {
-        CreateMap<ExampleEntity, InsertExampleDto>().ReverseMap();
-        CreateMap<ExampleEntity, ReadExampleDto>().ReverseMap();
-        CreateMap<ExampleEntity, UpdateExampleDto>().ReverseMap();
+        CreateMap<Example, InsertExampleDto>().ReverseMap();
+        CreateMap<Example, ReadExampleDto>().ReverseMap();
+        CreateMap<Example, UpdateExampleDto>().ReverseMap();
     }
     
 }

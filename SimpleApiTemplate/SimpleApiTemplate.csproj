@@ -9,11 +9,22 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Controllers\Mail\**" />
+      <Compile Remove="Migrations\**" />
+      <Content Remove="Controllers\Mail\**" />
+      <Content Remove="Migrations\**" />
+      <EmbeddedResource Remove="Controllers\Mail\**" />
+      <EmbeddedResource Remove="Migrations\**" />
+      <None Remove="Controllers\Mail\**" />
+      <None Remove="Migrations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="AutoMapper" Version="13.0.1" />
         <PackageReference Include="MailKit" Version="4.3.0" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.1" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="8.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1">
@@ -26,7 +37,7 @@
         </PackageReference>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
         <PackageReference Include="SendGrid" Version="9.29.1" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
         <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.6.2" />
         <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.0" />
     </ItemGroup>
@@ -38,14 +49,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\Mail\" />
-      <Folder Include="Data\Dtos\ExampleDtos\" />
-      <Folder Include="Migrations\" />
+      <_ContentIncludedByDefault Remove="SignalClient\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="SignalClient\obj\SignalClient.csproj.nuget.dgspec.json" />
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="SignalClient\obj\project.assets.json" />
-      <_ContentIncludedByDefault Remove="SignalClient\obj\SignalClient.csproj.nuget.dgspec.json" />
+      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
     </ItemGroup>
 
 </Project>

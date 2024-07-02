@@ -1,6 +1,6 @@
 //MMORPG Web Text Based Game - Modelagem de Dados - Web API
 
-Table user {
+Table User {
     id varchar(255) [pk, increment] //GUID
     name varchar(255) // not null
     email varchar(255) // not null
@@ -12,7 +12,7 @@ Table user {
     created_at timestamp
 }
 
-Table character {
+Table Character {
     id varchar(255) [pk, increment] //GUID
     name varchar(255) // not null
     surname varchar(255) // not null
@@ -25,5 +25,33 @@ Table character {
     wisdom int // not null
     charisma int // not null
     avatar varchar(255) // not null image link
-    user_id varchar(255) [ref: > user.id] //GUID
+    user_id varchar(255) [ref: > User.id] //GUID
+}
+
+Table Inventory {
+    id varchar(255) [pk, increment] //GUID
+    size int // not null
+    character_id varchar(255) [ref:  Character.id] //GUID
+}
+
+Table Item {
+    id int [pk, increment]
+    name varchar(255) // not null
+}
+
+Table ItemInstance {
+    id varchar(255) [pk, increment] //GUID
+    item_id int [ref: > Item.id]
+    inventory_id varchar(255) [ref: > Inventory.id] //GUID
+}
+
+Table Skill {
+    id int [pk, increment]
+    name varchar(255) // not null
+}
+
+Table SkillInstance {
+    id varchar(255) [pk, increment] //GUID
+    skill_id int [ref: > Skill.id]
+    character_id varchar(255) [ref: > Character.id] //GUID
 }

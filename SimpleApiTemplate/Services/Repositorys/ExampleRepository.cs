@@ -6,7 +6,7 @@ using SimpleApiTemplate.Services.GenericRepository;
 
 namespace SimpleApiTemplate.Services.Repositorys;
 
-public class ExampleRepository : GenericRepository<ExampleEntity>, IExampleRepository
+public class ExampleRepository : GenericRepository<Example>, IExampleRepository
 {
     public ExampleRepository(DataContext context) : base(context)
     {

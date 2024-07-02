@@ -7,7 +7,7 @@ namespace SimpleApiTemplate.Data;
 
 public class DataContext : IdentityDbContext<User>
 {
-    public DbSet<ExampleEntity> Examples { get; set; }
+    public DbSet<Example> Examples { get; set; }
 
     public DataContext(DbContextOptions<DataContext> options) : base(options)
     {
@@ -53,7 +53,7 @@ public class DataContext : IdentityDbContext<User>
                 }
             );
 
-            var example = new ExampleEntity
+            var example = new Example
             {
                 Id = i,
                 Name = $"Example{i}",
@@ -61,7 +61,7 @@ public class DataContext : IdentityDbContext<User>
                 IsConfirmed = true
             };
             
-            modelBuilder.Entity<ExampleEntity>().HasData(example);
+            modelBuilder.Entity<Example>().HasData(example);
         }
     }
 }
